@@ -1,0 +1,15 @@
+.paragraph {
+  color: #1f2f56;
+}
+
+.paragraph span {
+  font-weight: 700;
+}
+
+.error {
+  color: red;
+}
+
+.error span {
+  font-weight: 700;
+}

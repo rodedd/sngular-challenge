@@ -1,23 +1,47 @@
 const serieCalculator = (number) => {
-  return (prime(number + 3) * triangular(number - 1)) / fibonacci(number - 2);
-};
+  const data = { error: false, message: '', value: 0 };
 
-const triangular = (number) => {
-  return number * (number + 1) / 2;
-};
+  const primeData = prime(number + 3);
+  const triangularData = triangular(number - 1);
+  const fibonacciData = fibonacci(number - 2);
 
-const fibonacci = (number) => {
-  if (number == 0) return 0;
-  if (number == 1 || number == -1) return 1;
-
-  if(number < 0) {
-    return Math.pow(-1, number + 1) * fibonacci(Math.abs(number));
+  if(primeData == null) {
+    data.error = true;
+    data.message = 'El término primo es un valor negativo.';
+  } else if(triangularData == null) {
+    data.error = true;
+    data.message = 'El término triangular es un valor negativo.';
+  } else if(fibonacciData === 0) {
+    data.error = true;
+    data.message = 'El término fibonacci es 0 y no es posible dividir entre este valor.';
   } else {
-    return fibonacci(number - 1) + fibonacci(number - 2);
+    const result = (primeData * triangularData) / fibonacciData;
+    data.value = result;
+  }
+
+  return data;
+};
+
+const triangular = (term) => {
+  if(term < 0) return null;
+
+  return term * (term + 1) / 2;
+};
+
+const fibonacci = (term) => {
+  if(term == 0) return 0;
+  if(term == 1 || term == -1) return 1;
+
+  if(term < 0) {
+    return Math.pow(-1, term + 1) * fibonacci(Math.abs(term));
+  } else {
+    return fibonacci(term - 1) + fibonacci(term - 2);
   }
 };
 
 const prime = (term) => {
+  if(term < 0) return null;
+
   const primeNumbers = [];
   let naturalNumber = 2;
 
