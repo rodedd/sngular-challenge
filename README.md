@@ -1,8 +1,25 @@
-# React + Vite
+# SNGULAR Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### About
+Technical challenge for the interview with SNGULAR.
+ 
+### Built with
 
-Currently, two official plugins are available:
+* **Library**: React.js
+* **Styling**: CSS Modules
+* **Bundler**: Vite
+* **Testing**: Vitest
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Scripts
+* **Install dependencies**
+  ```console
+  npm install
+  ```
+* **Run on local server**
+  ```console
+  npm run dev
+  ```
+* **Run tests**
+  ```console
+  npm run test
+  ```
